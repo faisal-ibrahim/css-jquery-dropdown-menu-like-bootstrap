@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS and JQuery Dropdown Menu</title>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="jquery.dropdown.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.dropdown.js"></script>
+	
+</head>
+<body>
+	<h2>CSS and JQuery Dropdown Menu</h2>
+	<p style="float:left">
+		<span class="menu" data-dropdown="#dropdown-1">Title1</span>
+	</p>
+	<div id="dropdown-1" class="dropdown  dropdown-tip has-icons">
+		<ul class="dropdown-menu">
+			<li data-item="one" class="select-item">Option 1</li>
+			<li data-item="two" class="select-item">Option 2</li>
+			<li data-item="three" class="select-item">Option 3</li>
+		</ul>
+	</div>
+	<p style="float:left">
+		<span class="menu" data-dropdown="#dropdown-2">Title2</span>
+	</p>
+	<div id="dropdown-2" class="dropdown  dropdown-tip has-icons">
+		<ul class="dropdown-menu">
+			<li data-item="four" class="select-item">Option 4</li>
+			<li data-item="five" class="select-item">Option 5</li>
+			<li data-item="six" class="select-item">Option 6</li>
+		</ul>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	 $(document).ready(function(){
+		$(".select-item").click(function(){
+			var selected_item_val = $(this).data("item");
+			console.log(selected_item_val);
+			//alert(selected_item_val);
+			if($(this).hasClass("check")){
+				$(this).toggleClass("check");
+			} else {
+				$(".select-item").removeClass("check");
+				$(this).toggleClass("check");
+			}
+		});
+	 });
+</script>
+</html>
+
